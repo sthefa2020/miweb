@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil Profesional - Sthefany Sanchez Laurente</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Sthefany Sanchez Laurente</h1>
+        <h2>Abogada Litigante</h2>
+    </header>
+
+    <section class="profile">
+        <img src="fondo.jpg" alt="Foto de Sthefany" class="profile-pic">
+        <p class="description">
+            Responsable, perseverante, empática y estratégica. Abogada con experiencia en litigio civil y penal, 
+            especializada en el análisis de casos complejos y la elaboración de estrategias procesales efectivas.
+        </p>
+    </section>
+
+    <section class="cards-container">
+
+        <div class="card" onclick="openModal('exp')">
+            <h3>Experiencia Profesional</h3>
+        </div>
+
+        <div class="card" onclick="openModal('skills')">
+            <h3>Habilidades</h3>
+        </div>
+
+        <div class="card" onclick="openModal('projects')">
+            <h3>Proyectos</h3>
+        </div>
+
+        <div class="card" onclick="openModal('education')">
+            <h3>Formación Académica</h3>
+        </div>
+
+        <div class="card" onclick="openModal('contact')">
+            <h3>Contacto</h3>
+        </div>
+
+    </section>
+
+    <!-- Modales -->
+    <div id="exp" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('exp')">&times;</span>
+            <h2>Experiencia Profesional</h2>
+            <ul>
+                <li><strong>Abogada Litigante – Estudio Jurídico Torres & Asociados (2021 – Actualidad)</strong><br>
+                Litigios civiles y penales, audiencias, estrategias procesales y negociación.</li><br>
+                <li><strong>Asesora Legal – Consultora Legal P&L (2019 – 2021)</strong><br>
+                Asesoría en contratos, derecho empresarial y procesos administrativos.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="skills" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('skills')">&times;</span>
+            <h2>Habilidades</h2>
+            <ul>
+                <li>Derecho civil, penal y corporativo</li>
+                <li>Redacción de documentos legales</li>
+                <li>Análisis estratégico de casos</li>
+                <li>Oratoria y argumentación</li>
+                <li>Negociación y mediación</li>
+                <li>Gestión de clientes</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="projects" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('projects')">&times;</span>
+            <h2>Proyectos Destacados</h2>
+            <ul>
+                <li>Defensa exitosa en caso de responsabilidad civil compleja</li>
+                <li>Implementación de sistema de gestión documental para estudio jurídico</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="education" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('education')">&times;</span>
+            <h2>Formación Académica</h2>
+            <ul>
+                <li>Licenciatura en Derecho – Universidad Nacional de Justicia (2014 – 2019)</li>
+                <li>Diplomado en Litigación Oral – Instituto Superior de Derecho Procesal (2020)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="contact" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('contact')">&times;</span>
+            <h2>Contacto</h2>
+            <p>Correo: sthefany.s.laurente@example.com</p>
+            <p>LinkedIn: linkedin.com/in/sthefanylaurente</p>
+            <p>Teléfono: +51 999 456 320</p>
+        </div>
+    </div>
+
+    <script>
+        function openModal(id) {
+            document.getElementById(id).style.display = 'block';
+        }
+        function closeModal(id) {
+            document.getElementById(id).style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
