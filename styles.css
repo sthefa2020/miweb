@@ -1,0 +1,213 @@
+/* Variables para facilitar el cambio de colores */
+:root {
+    --color-primary: #556B2F; /* Verde Oliva oscuro (de la imagen de fondo) */
+    --color-secondary: #B8860B; /* Dorado/Marrón claro (de la imagen de fondo) */
+    --color-text-light: #F5F5DC; /* Color crema/beige para texto sobre fondo oscuro */
+    --color-text-dark: #333; /* Gris oscuro para texto sobre fondo claro */
+    --color-card-bg: rgba(85, 107, 47, 0.75); /* Fondo de tarjeta semi-transparente */
+    --color-modal-bg: #fff; /* Fondo de modal blanco */
+
+    /* Tipografías */
+    --font-lettering: 'Dancing Script', cursive;
+    --font-content: 'Montserrat', sans-serif;
+}
+
+body {
+    font-family: var(--font-content);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: var(--color-text-dark);
+    /* Fondo con tu imagen: ¡IMPORTANTE! Asegúrate que tu imagen se llame "fondo.jpg" */
+    background-image: url('fondo.jpg'); 
+    background-size: cover;
+    background-attachment: fixed; /* Mantiene el fondo fijo al hacer scroll */
+    background-position: center;
+}
+
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    /* Fondo sutil para que el contenido se lea mejor sobre la imagen de fondo */
+    background-color: rgba(255, 255, 255, 0.7); /* Blanco semi-transparente */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    min-height: 100vh;
+}
+
+/* --- ESTILOS DEL ENCABEZADO Y NOMBRE --- */
+.profile-header {
+    text-align: center;
+    padding: 40px 0;
+    border-bottom: 2px solid var(--color-secondary);
+}
+
+.name-photo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Foto circular */
+    object-fit: cover;
+    border: 5px solid var(--color-secondary);
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.name-lettering {
+    font-family: var(--font-lettering);
+    font-size: 4.5em; /* Tamaño grande para sobresalir */
+    color: var(--color-primary);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    margin: 0;
+    line-height: 1;
+}
+
+.contact-info {
+    margin-top: 15px;
+    font-size: 1.1em;
+    color: var(--color-primary);
+}
+
+/* --- ESTILOS DE LA NAVEGACIÓN --- */
+.sections-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px 0;
+    background-color: var(--color-primary);
+    margin-bottom: 40px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.nav-item {
+    color: var(--color-text-light);
+    text-decoration: none;
+    padding: 10px 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-item:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-text-dark);
+}
+
+/* --- ESTILOS DE LAS TARJETAS (CAJAS DE PORTADA) --- */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.card {
+    background-color: var(--color-card-bg);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.card-title {
+    font-family: var(--font-content);
+    font-weight: 700; /* Encabezados en negrita */
+    font-size: 1.5em;
+    color: var(--color-text-light);
+    margin-top: 0;
+    text-transform: uppercase;
+}
+
+.open-modal-btn {
+    background-color: var(--color-secondary);
+    color: var(--color-text-dark);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.open-modal-btn:hover {
+    background-color: #DAA520; /* Tono más claro al pasar el ratón */
+}
+
+/* --- ESTILOS DEL MODAL (VENTANA DESPLEGABLE) --- */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 10; /* Por encima de todo */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6); /* Fondo semi-transparente oscuro */
+}
+
+.modal-content {
+    background-color: var(--color-modal-bg);
+    margin: 10% auto; /* Centrado vertical y horizontal */
+    padding: 30px;
+    border: 1px solid var(--color-primary);
+    width: 80%;
+    max-width: 600px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+}
+
+/* Animación para aparecer el modal */
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+.close-btn {
+    color: var(--color-primary);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+.modal-content h3 {
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-secondary);
+    padding-bottom: 10px;
+    margin-top: 0;
+    font-weight: 700;
+}
+
+.modal-content ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.modal-content li {
+    margin-bottom: 8px;
+}
